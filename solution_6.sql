@@ -1,0 +1,1 @@
+SELECT city.city, COUNT(customer.customer_id) FILTER (WHERE customer.active = 1) AS active_customers, COUNT(customer.customer_id) FILTER (WHERE customer.active = 0) AS inactive_customers FROM city JOIN address ON city.city_id = address.city_id JOIN customer ON address.address_id = customer.address_id GROUP BY city.city ORDER BY inactive_customers DESC; 
