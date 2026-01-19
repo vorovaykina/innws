@@ -1,0 +1,1 @@
+SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM actor JOIN film_actor ON actor.actor_id=film_actor.actor_id JOIN film_category ON film_actor.film_id=film_category.film_id WHERE category_id=3 GROUP BY actor.actor_id, first_name, last_name ORDER BY COUNT(film_actor.film_id) DESC LIMIT 3; 
